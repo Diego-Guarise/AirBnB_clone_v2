@@ -34,7 +34,7 @@ def Pythonis(text="is cool"):
 @app.route("/number/<n>", strict_slashes=False)
 def number(n):
     """print Python is string"""
-    return "%s is a number" % escape(int(n))
+    return "{:d} is a number".format(int(n))
 
 
 @app.route("/number_template/<n>", strict_slashes=False)
