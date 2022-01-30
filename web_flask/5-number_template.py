@@ -31,16 +31,16 @@ def Pythonis(text="is cool"):
     return "Python %s" % escape(text.replace("_", " "))
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """print Python is string"""
-    return "{:d} is a number".format(int(n))
+    return "{:d} is a number".format(n)
 
 
-@app.route("/number_template/<n>", strict_slashes=False)
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def numberinhtml(n):
     """the number in html"""
-    return render_template("5-number.html", n=int(n))
+    return render_template("5-number.html", n=n)
 
 
 if __name__ == "__main__":
