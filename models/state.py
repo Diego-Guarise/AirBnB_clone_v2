@@ -13,11 +13,9 @@ class State(BaseModel, Base):
     name = Column(String(128), nullable=False)
     #cities = relationship("City", backref="state")
 
-    def __init__(self, *args, **kwargs):
-        """initializesate"""
-        super().__init__(*args, **kwargs)
-
-    if models.Typestorage != "db":
+    if (models.storage_used == "db"):
+        cities = relationship("City", backref="state")
+    else:
         @property
         def cities(self):
             """getter for list of city instances related to theate"""
