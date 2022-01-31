@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import scoped_session
+from sqlalchemy.orm import scoped_session, sessionmaker
 from models.base_model import Base
 from os import getenv
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from models.user import User
 from models.place import Place
 from models.state import State
